@@ -15,4 +15,7 @@ spring:
     show-sql: false
 
     open-in-view: false
-
+logging:
+  level:
+  #  root: WARN
+    cgsimoes23.github.com: DEBUG

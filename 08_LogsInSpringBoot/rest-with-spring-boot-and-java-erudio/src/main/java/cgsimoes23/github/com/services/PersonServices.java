@@ -4,18 +4,19 @@ import cgsimoes23.github.com.controllers.PersonController;
 import cgsimoes23.github.com.exception.ResourceNotFoundException;
 import cgsimoes23.github.com.model.Person;
 import cgsimoes23.github.com.repository.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Logger;
 
 @Service // This annotation indicates that this class is a service component in the Spring framework.
 public class PersonServices {
 
     private final AtomicLong counter = new AtomicLong();
-    private Logger logger = Logger.getLogger(PersonController.class.getName());
+    private Logger logger = LoggerFactory.getLogger(PersonController.class.getName());
 
     @Autowired
     PersonRepository repository;
