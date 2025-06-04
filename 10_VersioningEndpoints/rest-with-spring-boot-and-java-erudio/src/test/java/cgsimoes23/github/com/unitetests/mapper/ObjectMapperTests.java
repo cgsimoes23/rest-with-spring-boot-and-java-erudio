@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
-import cgsimoes23.github.com.data.dto.PersonDTO;
+import cgsimoes23.github.com.data.dto.v1.PersonDTO;
 import cgsimoes23.github.com.model.Person;
 import cgsimoes23.github.com.unitetests.mapper.mocks.MockPerson;
 import org.junit.jupiter.api.BeforeEach;

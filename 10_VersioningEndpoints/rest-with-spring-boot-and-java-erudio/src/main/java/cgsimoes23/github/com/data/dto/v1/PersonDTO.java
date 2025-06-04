@@ -1,4 +1,4 @@
-package cgsimoes23.github.com.data.dto;
+package cgsimoes23.github.com.data.dto.v1;
 
 import java.io.Serializable;
 import java.util.Objects;

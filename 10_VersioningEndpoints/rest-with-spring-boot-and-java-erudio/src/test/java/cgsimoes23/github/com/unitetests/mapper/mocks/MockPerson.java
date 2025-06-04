@@ -1,6 +1,6 @@
 package cgsimoes23.github.com.unitetests.mapper.mocks;
 
-import cgsimoes23.github.com.data.dto.PersonDTO;
+import cgsimoes23.github.com.data.dto.v1.PersonDTO;
 import cgsimoes23.github.com.model.Person;
 
 import java.util.ArrayList;
