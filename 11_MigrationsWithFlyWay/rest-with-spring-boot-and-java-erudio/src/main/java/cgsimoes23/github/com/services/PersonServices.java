@@ -1,13 +1,10 @@
 package cgsimoes23.github.com.services;
 
 import cgsimoes23.github.com.controllers.PersonController;
-import cgsimoes23.github.com.data.dto.v1.PersonDTO;
-import cgsimoes23.github.com.data.dto.v2.PersonDTOV2;
+import cgsimoes23.github.com.data.dto.PersonDTO;
 import cgsimoes23.github.com.exception.ResourceNotFoundException;
 import static cgsimoes23.github.com.mapper.ObjectMapper.parseListObjects;
 import static cgsimoes23.github.com.mapper.ObjectMapper.parseObject;
-
-import cgsimoes23.github.com.mapper.custom.PersonMapper;
 import cgsimoes23.github.com.model.Person;
 import cgsimoes23.github.com.repository.PersonRepository;
 import org.slf4j.Logger;
@@ -26,9 +23,6 @@ public class PersonServices {
 
     @Autowired
     PersonRepository repository;
-
-    @Autowired
-    PersonMapper converter;
 
     public List<PersonDTO> findAll() {
 
@@ -51,14 +45,6 @@ public class PersonServices {
         var entity = parseObject(person, Person.class);
 
         return parseObject(repository.save(entity), PersonDTO.class);
-    }
-
-    public PersonDTOV2 createV2(PersonDTOV2 person) {
-        logger.info("Creating one person V2!");
-
-        var entity = converter.convertDTOToEntity(person);
-
-        return converter.convertEntityToDTO(repository.save(entity));
     }
 
     public PersonDTO update(PersonDTO person) {
