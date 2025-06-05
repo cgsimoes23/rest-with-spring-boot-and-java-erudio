@@ -1,17 +1,26 @@
 package cgsimoes23.github.com.data.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@JsonPropertyOrder({"id", "address", "first_Name", "last_Name", "gender"})
 public class PersonDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
 
+    @JsonProperty("first_Name")
     private String firstName;
+
+    @JsonProperty("last_Name")
     private String lastName;
     private String address;
+    @JsonIgnore
     private String gender;
 
     public PersonDTO() {}
