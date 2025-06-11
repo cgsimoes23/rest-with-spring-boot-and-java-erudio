@@ -31,6 +31,10 @@ public class PersonController {
 
         var person = service.findById(id);
         person.setBirthDay(new Date());
+        //    person.setPhoneNumber("+55 (34) 98765-4321");
+        person.setPhoneNumber("");
+        person.setLastName(null);
+        person.setSensitiveData("Foo bar");
         return person;
     }
 
