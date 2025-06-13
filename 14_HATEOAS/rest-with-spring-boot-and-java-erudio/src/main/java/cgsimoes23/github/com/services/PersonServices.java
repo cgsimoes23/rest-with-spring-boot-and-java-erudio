@@ -2,6 +2,7 @@ package cgsimoes23.github.com.services;
 
 import cgsimoes23.github.com.controllers.PersonController;
 import cgsimoes23.github.com.data.dto.PersonDTO;
+import cgsimoes23.github.com.exception.RequiredObjectIsNullException;
 import cgsimoes23.github.com.exception.ResourceNotFoundException;
 import cgsimoes23.github.com.model.Person;
 import cgsimoes23.github.com.repository.PersonRepository;
@@ -45,6 +46,9 @@ public class PersonServices {
     }
 
     public PersonDTO create(PersonDTO person) {
+
+        if(person == null) throw new RequiredObjectIsNullException();
+
         logger.info("Creating one person!");
 
         var entity = parseObject(person, Person.class);
@@ -55,6 +59,9 @@ public class PersonServices {
     }
 
     public PersonDTO update(PersonDTO person) {
+
+        if(person == null) throw new RequiredObjectIsNullException();
+
         logger.info("Updating one person!");
 
         Person entity = repository.findById(person.getId())
